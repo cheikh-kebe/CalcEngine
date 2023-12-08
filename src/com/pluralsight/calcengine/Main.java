@@ -3,8 +3,6 @@ package com.pluralsight.calcengine;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-import static com.pluralsight.calcengine.MathEquation.getAverageResult;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -23,7 +21,21 @@ public class Main {
             System.out.println("result = " + equation.getResult());
         }
 
-        System.out.println("Average result = " + getAverageResult());
+        System.out.println("Average result = " + MathEquation.getAverageResult());
+
+        MathEquation equationOverload = new MathEquation('d');
+        double leftDouble = 9;
+        double rightDouble = 4;
+
+        equationOverload.execute(leftDouble, rightDouble);
+
+        System.out.println("Overload result with doubles = " + equationOverload.getResult());
+
+        int leftInt = 9;
+        int rightInt = 4;
+        /* Java converted double in integer but return as expected doubles*/
+        equationOverload.execute(leftInt, rightInt);
+        System.out.println("Overload result with integers = " + equationOverload.getResult());
     }
 
     private static MathEquation create(double leftVal, double rightVal, char opCode) {
