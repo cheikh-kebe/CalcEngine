@@ -8,7 +8,19 @@ public class MathEquation {
 
     private static int numberOfCalculations;
     private static double sumOfResults;
-    void execute() {
+
+    public MathEquation() {}
+
+    public MathEquation(char opCode) {
+        this.opCode = opCode;
+    }
+
+    public MathEquation(char opCode, double leftVal, double rightVal) {
+        this(opCode);
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+    }
+    public void execute() {
         switch (opCode) {
             case 'a':
                 result = leftVal + rightVal;
@@ -31,6 +43,21 @@ public class MathEquation {
         numberOfCalculations++;
         sumOfResults += result;
     }
+
+    public void execute(double leftVal, double rightVal){
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+        execute();
+    }
+    /*Overload method */
+    public void execute(int leftVal, int rightVal){
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+        execute();
+
+        result = (int)result;
+    }
+
 
     public static double getAverageResult(){
         return sumOfResults/numberOfCalculations;
