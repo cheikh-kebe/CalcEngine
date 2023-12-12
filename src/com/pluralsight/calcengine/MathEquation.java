@@ -20,7 +20,17 @@ public class MathEquation {
         this.leftVal = leftVal;
         this.rightVal = rightVal;
     }
+
+    static void doCalculation(CalculateBase calculation, double leftVal, double rightVal){
+        calculation.setLeftVal(leftVal);
+        calculation.setRightVal(rightVal);
+        calculation.calculate();
+    }
     public void execute() {
+        Divider divider = new Divider();
+        Adder adder = new Adder();
+        Multiplier multiplier = new Multiplier();
+        Subtracter subtracter = new Subtracter();
         switch (opCode) {
             case 'a':
                 result = leftVal + rightVal;
