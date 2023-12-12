@@ -26,7 +26,7 @@ public class Main {
         };
 
         System.out.println();
-        System.out.println("Array Calculalion");
+        System.out.println("Array Calculation");
 
         for(CalculateBase calculation : calculations) {
             calculation.calculate();

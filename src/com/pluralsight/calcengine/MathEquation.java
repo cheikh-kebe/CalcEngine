@@ -27,10 +27,6 @@ public class MathEquation {
         calculation.calculate();
     }
     public void execute() {
-        Divider divider = new Divider();
-        Adder adder = new Adder();
-        Multiplier multiplier = new Multiplier();
-        Subtracter subtracter = new Subtracter();
         switch (opCode) {
             case 'a':
                 result = leftVal + rightVal;
